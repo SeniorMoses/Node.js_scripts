@@ -13,7 +13,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'supersecretkey';
 
 // Render provides a DATABASE_URL environment variable automatically
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.postgresql://beesweb_db_user:F2Pl7U5hSfX6YCLxhI811eR2nram9SEz@dpg-d7v2onl0lvsc739pb8fg-a/beesweb_db,://beesweb_db_user:F2Pl7U5hSfX6YCLxhI811eR2nram9SEz@dpg-d7v2onl0lvsc739pb8fg-a/beesweb_db
   ssl: {
     rejectUnauthorized: false // Required for Render/external connections
   }
