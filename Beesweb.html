@@ -1,0 +1,554 @@
+<!doctype html>
+
+<html lang="en">  
+    <head>  
+        <meta charset="utf-8">  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>BEESWEB OFFICIAL WEBPAGE</title>  
+        <style>  
+            *{  
+                box-sizing:border-box;  
+            }  
+            body, html{  
+                margin:0;  
+                border:0;  
+                padding:0;  
+                background:#0a1a3a;  
+                color:#f1f2f3;  
+                box-sizing:border-box;  
+                border:none;  
+                background-blend:normal;  
+                min-height:100vh;  
+                padding-top:0;  
+                overflow-x:hidden;  
+        }  
+               .header{  
+                   width:100%;  
+                   background:rgba(0,10,10, 0.7);  
+                   height:100px;  
+                   position:fixed;  
+                   z-index:1;  
+                   text-align:center;  
+               }  
+                   .main-name{  
+                       font-size:50px;  
+                       font-family:arial, unica, roboto, sans-serif;  
+                       color:#f1f4f1;  
+               }  
+               .title{  
+                   font-size:50px;  
+                   font-family:arial, roboto, unica, sans-serif;  
+                   color:#ff2a4a;  
+                   margin-left:25px;  
+               }  
+               .intro{  
+                   width:75%;  
+                   position:relative;  
+                   text-align:center;  
+                   left:80px;  
+                   top:30px;  
+                   right:none;  
+                   font-size:30px;  
+                   font-weight:bold;  
+                   background:#0a1a3a;  height:auto;  
+               box-shadow:7px 7px 7px 7px rgba(0,0,0,0.4);  
+               color:#fff;  
+               box-sizing:border-box;  
+                 
+           }  
+           .tab{  
+               overflow:hidden;  
+               border:1px solid #8a8a5a;  
+               width:98%;  
+               background:#cfcfcf;  
+               height:100px;  
+               z-index:100;  
+               position:relative;  
+           }  
+           .tab button{  
+               background-color:inherit;  
+               border-radius:2px;  
+               font-weight:bold;  
+               font-size:20px;  
+               overflow:hidden;  
+               float:right;  
+               outline:none;  
+               width:;  
+               padding:25px;  
+               cursor:pointer;  
+               left:none;  
+           }  
+           .tab button:hover{  
+               background:#36cfff;  
+               transform:0.2s;  
+           }  
+           .tab button a{  
+               display:block;  
+               background:#ccc;  
+           }  
+           .tabcontent{  
+               display:none;  
+               border-radius:10px;  
+               background:rgba(200,200,200,0.64);  
+               width:90%;  
+               text-align:center;  
+               padding:10px;  
+               position:relative;  
+               animation:fadein 3s forwards;  
+           }  
+           @keyframes fadein{  
+               0%{  
+                   opacity:0;  
+                   transform:translateY(3px);  
+               }  
+               50%{  
+                   opacity:1;  
+                   transform:translateY(0px);  
+              }  
+           }  
+           .tab.active{  
+               background:#36cfff;  
+           }  
+          .home-tab{  
+              width:100%;  
+              display:flex;  
+              justify-content:center;  
+              align-items:left;  
+              padding:20px;  
+              margin:0;  
+              box-sizing:border-box;  
+              box-shadow:10px 10px 10px 10px #36cfff;  
+              border-radius:10px;  
+          }  
+          .html{  
+              width:33%;  
+              overflow:scroll;  
+              background:#ff9595;  
+              color:#0a1a3a;  
+              height:600px;  
+              padding:20px;  
+              box-sizing:border-box;  
+              border-radius:25px;  
+          }  
+          .css{  
+              width:33%;  
+              overflow:scroll;  
+              background:#FF9595;  
+              padding:20px;  
+              color:#000;  
+              height:600px;  
+              box-sizing:border-box;  
+              margin-left:20px;  
+              border-radius:25px;  
+          }  
+          .aboutcontent{  
+              background:#f1f2f3;  
+              font-weight:bold;  
+              font-size:20px;  
+              color:#000;  
+          }  
+          .nav{  
+              width:200px;  
+              box-shadow:10 10 10 10 rgba(0,0,0,0.7);  
+              height:auto;  
+              position:absolute;  
+              font-weight:bold;  
+              font-size:25px;  
+              box-sizing:border-box;  
+              border-radius:10px;  
+              padding:10px;  
+              z-index:10;  
+              right:0;  
+              bottom:0;  
+              background:rgba(0,0,0,0.65);  
+          }  
+          .nav button{  
+              width:100px;  
+              background:rgba(0,0,150,0.8);  
+              border-radius:15px;  
+              padding:10px;  
+              font-size:20px;  
+              font-weight:bold;  
+              color:#fafafa;  
+          }  
+          .nav textarea{  
+              background:#f1f2f3;  
+              font-weight:bold;  
+              border-radius:15px;  
+              width:300px;  
+              height:100px;  
+              transform:0.2s;  
+              color:#0a0a0a;  
+              cursor:pointer;  
+              z-index:0.1;  
+          }  
+          .nav textarea:hover{  
+              background:rgba(220,220,220,0.9);  
+          }  
+          .form-container{  
+              width:450px;  
+              padding:20px;  
+              background:rgba(0,0,0,0.6);  
+              border-radius:12px;  
+              color:#fff;  
+              text-align:center;  
+          }  
+          .form-toggle{  
+              display:flex;  
+              justify-content:center;  
+              margin:none;  
+          }  
+          .form-toggle button{  
+              flex:1;  
+              padding:4px;  
+              margin:none;  
+              background:none;  
+              border-bottom:10px transparent solid;  
+              color:#f1f1f1;  
+              font-weight:bold;  
+          }  
+          .form-toggle button.active{  
+              transform:0.3s;  
+              border-color:#36cfff;  
+              color:#36cfff;  
+          }  
+          form{  
+              display:none;  
+              flex-direction:column;  
+          }  
+          form.active{  
+              display:flex;  
+          }  
+          input{  
+              padding:10px;  
+              border:none;  
+              border-radius:4px;  
+              margin:10px;  
+              font-weight:bold;  
+   
+          }  
+          .submit-btn{  
+              width:350px;  
+              padding:25px;  
+              background:#36cfff;  
+              border-radius:12px;  
+              color:#f1f1f1;  
+              font-weight:bold;  
+          }  
+          .submit-btn:hover{  
+              background:#02cfff;  
+              transform:0.2s;  
+          }  
+          .login{  
+              display:flex;  
+              justify-content:center;  
+              align-items:center;  
+              background:rgba(0,0,0,0.7);  
+          }  
+          .main-home{  
+              width:70%;  
+              background:rgba(0,0,0,0.85);  
+              font-weight:bold;  
+              font-family:unica, arial, sans-serif;  
+              font-size:18px;  
+              color:#f1f2f3;  
+              z-index:100;  
+              text-align:center;  
+              margin-left:100px;  
+          }  
+          .home-head{  
+              background:#ff4a2a;  
+              font-weight:bold;  
+              font-size:23px;  
+          }  
+          @media (max-width: 760px) {
+
+.header{
+height: 70px;
+}
+
+.main-name, .title{
+font-size: 22px;
+}
+
+.intro{
+width: 95%;
+left: 0;
+margin: 90px auto 20px auto;
+font-size: 18px;
+}
+
+.tab{
+height: auto;
+display: flex;
+flex-wrap: wrap;
+justify-content: end;
+}
+
+.tab button{
+float: left;
+padding: 12px;
+font-size: 14px;
+}
+
+.home-tab{
+flex-direction: column;
+gap: 15px;
+}
+
+.html, .css{
+width: 100%;
+height: auto;
+}
+
+.main-home{
+width: 95%;
+margin: 10px auto;
+font-size: 16px;
+}
+
+.form-container{
+width: 95%;
+}
+
+.submit-btn{
+width: 100%;
+padding: 15px;
+}
+
+.nav{
+position: static;
+width: 95%;
+margin: 20px auto;
+}
+
+.nav textarea{
+width: 100%;
+}
+
+img{
+width: 100%;
+height: auto;
+}
+}
+</style>
+</head>
+<body>
+<div class="header">
+<h3><span class="main-name">BEESWEB</span><span class="title"> ||WEB STUDIO</span></h3>
+</div><br>
+<div class="intro">
+<h1>HELLO<br>WELCOME TO BEESWEB</h1>
+<h3>THE HOME OF PROFESSIONAL WEB STUDIO</h3>
+</div>
+<div class="tab">
+<button class="tablink" onclick="openTabs(event,'signUp')">SIGNUP</button>
+<button class="tablink" onclick="openTabs(event, 'about')">ABOUT US</button>
+<button class="tablink" onclick="openTabs(event, 'services')">SERVICES</button>
+<button class="tablink" onclick="openTabs(event, 'home')">HOME</button>
+</div>
+<div id="home" class="tabcontent">
+<div class="main-home">
+<h2><span class="home-head">WHO AND WHAT IS BEESWEB??</span></h2>
+<h4>BEESWEB is a professional and modern web studio that focuses on building interactive, secure and fast website for both companies and individuals</h4>
+<p>We also design and modify websites, upgrade and manage your data.<br></p>
+<p>Our main focus is customer satisfaction, fast delivery and secure projects and at affordable price<br>
+our works are clean and secure enough to seal your purpose</p>
+</div>
+<div class="main-home">
+<h2><span class="home-head">WHY CHOOSE BEESWEB??</span></h2>
+<h4>Choose BEESWEB if you want clean, secure, and modern class projects at affordable price</h4>
+<h4>Check down for the project description and estimated price</h4>
+<h3><span class="home-head"><strong><em>NOTE:BEESWEB WORKS ON  ALMOST EVERYTHING RELATED TO THE WEB</em></strong></span></h3>
+</div>
+<div class="home-tab">
+<div class="html">
+
+<h3>ABOUT BUILDING SIMPLE INTERACTIVE WEBSITE</h3>  
+                <h4>HOW MUCH DOES A SINGLE WEBSITE COST?</h4>  
+                <p><strong>It depends on the content of the website</strong></p>  
+                A single page website with simple content such as login and signup cards, a professional form, and other simple  websites like this may cost between $100-800.  
+                <p>More complex proffessional website like e-commerce, dashboard, maps, quizzes and others may cost about $1000-1500 if no data management is required.  
+                If data management and services (i.e database), then the price will raise a bit to about $1700-2000</p>  
+                </div>  
+                <div class="css">  
+                    <h3>ABOUT HOSTING WEBSITE</h3>  
+                    <h4>WHAT IT MEANS BY HOSTING WEBSITE</h4>  
+                    <p>Hosting website means running the website and maintainig security services, and DBMS(Database Management System)</p>  
+                    <p>This task includes the server running behind your website(frontend) managing and maintaining data and security measures<br>This task always cost about $16-18 per hour<br>But complex database management may cost around $26-30 per hour</p>  
+                    </div>  
+                </div>  
+                <h2>CEO OF BEESWEB </h2>  
+                <img src="https://i.ibb.co/9md9bkFN/IMG-20251001-180501-587-2.jpg" alt="CEO" width="90%" max-width"600px" height="auto">  
+                <h2>IT IS A GREAT PLEASURE INTERACTING WITH YOU</h2>  
+                <p>Join this WhatsApp channel<a href="https://whatsapp.com/channel/0029VbCOspNF1YlKHgsWXO3o">View channel</a></p>  
+                   <div class="nav">  
+                    <nav>  
+                        <h3>BEESWEB is an upcoming company<br>  
+                        Any feedback about this page??</h3>  
+                        <textarea placeholder="Enter your feedback.."></textarea>  
+                        <button id="feedbackbtn" type="submit">SUBMIT</button>  
+                    </nav>  
+                </div>  
+               
+        </div>  
+        <div id="about" class="tabcontent">  
+            <div class="aboutcontent">  
+            <h2>ABOUT BEESWEB</h2>  
+            <p>BEESWEB is a company that is capable of handling all web related tasks including building and managing professional and mordern website, database system management, website design and alot (almost every task about the web)</p>  
+            <p>BEESWEB is founded by an intelligent and hardworking developer called SENIOR MOSES</p>  
+            <P>We deal with both company and individual service</P>  
+            <h3>You can contact our customer service <a href="tel:+233257546010">HERE</a></h3>  
+           
+            </div>  
+        </div>  
+        <div id="services" class="tabcontent">  
+            <div class="aboutcontent">  
+            <h2>OUR SERVICES</h2>  
+            <p>We build professional and modern website<br>We build websites such as E-commerce, form of any kind, professional and mordern looking signup and login card, quiz page and many more at a very low price</p>  
+            <p>We also work on DBMA hosting and managing your website data of any form</p>  
+            <p>BEESWEB is the best company to help of any of the above mentioned tasks because it is yet to establish officially, we concentrate on customer satisfaction more than our own<br>We make sure your page is ready for enough review</p>  
+            </div>  
+        </div>  
+    <div class="login">  
+        <div class="form-container">  
+            <div id="signUp" class="tabcontent">  
+              
+                <div class="form-toggle">  
+                    <button id="login-btn" class="active">LOGIN</button>  
+                    <button id="signup-btn">SIGNUP</button>  
+                </div>  
+             
+          
+        <form id="login-form" class="active">  
+            <input type="email" name="email" placeholder="Enter email address..." required>  
+            <input type="password" name="password" placeholder="Enter password..." required>  
+            <button class="submit-btn" type="submit">LOGIN</button>  
+        </form>  
+        <form id="signup-form">  
+            <input type="text" name="username" placeholder="Enter username..." required>  
+            <input type="email" name="email" placeholder="Enter your email address..." required>  
+            <input type="password" name="password" minLength="8" placeholder="Create a strong password..." required>  
+            <input type="date" name="dateOfBirth"required>  
+            <button class="submit-btn" type="submit">SIGNUP</button>   
+        </form>  
+        </div>  
+    </div>  
+</div>  
+    <script>
+
+function openTabs(evt, tabname){
+var i, tabcontent, tablink;
+tabcontent=document.getElementsByClassName("tabcontent");
+for(i=0; i< tabcontent.length; i++){
+tabcontent[i].style.display="none"
+}
+tablink=document.getElementsByClassName("tablink");
+for(i=0; i< tablink.length; i++){
+tablink[i].classList.remove("active");
+}
+document.getElementById(tabname).style.display="block";
+evt.currentTarget.classList.add("active");
+};
+
+document.querySelector(".tablink:last-child").click();
+
+// ================= TOGGLE LOGIN/SIGNUP =================
+const loginBtn = document.getElementById("login-btn");
+const signupBtn = document.getElementById("signup-btn");
+const loginForm = document.getElementById("login-form");
+const signupForm = document.getElementById("signup-form");
+
+loginBtn.addEventListener('click', () => {
+    loginForm.classList.add("active");
+    signupForm.classList.remove("active");
+    loginBtn.classList.add("active");
+    signupBtn.classList.remove("active");
+});
+
+signupBtn.addEventListener('click', () => {
+    loginForm.classList.remove("active");
+    signupForm.classList.add("active");
+    loginBtn.classList.remove("active");
+    signupBtn.classList.add("active");
+});
+
+// ================= BACKEND CONNECTION =================
+const BASE_URL = "http://127.0.0.1:5000"; // your backend
+
+// --- SIGNUP ---
+signupForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = {
+        username: signupForm.elements.username.value,
+        email: signupForm.elements.email.value,
+        password: signupForm.elements.password.value,
+        dateOfBirth: signupForm.elements.dateOfBirth.value
+    };
+
+    try {
+        const res = await fetch(`${BASE_URL}/register`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        alert(result.msg || result.error);
+        signupForm.reset();
+    } catch (err) {
+        alert("Server error");
+    }
+});
+
+// --- LOGIN ---
+loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = {
+        email: loginForm.elements.email.value,
+        password: loginForm.elements.password.value
+    };
+
+    try {
+        const res = await fetch(`${BASE_URL}/login`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        alert(result.msg || result.error);
+
+        if (result.token) {
+            localStorage.setItem("token", result.token);
+        }
+
+        loginForm.reset();
+    } catch (err) {
+        alert("Server error");
+    }
+});
+
+// --- FEEDBACK ---
+
+const feedbackBtn = document.querySelector(".nav button");
+const feedbackText = document.querySelector(".nav textarea");
+
+feedbackBtn.addEventListener("click", async () => {
+    const feedback = feedbackText.value.trim();
+    if (!feedback) return alert("Please enter feedback");
+
+    try {
+        const res = await fetch(`${BASE_URL}/feedback`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ feedback })
+        });
+        const result = await res.json();
+        alert(result.msg || result.error);
+        feedbackText.value = "";
+    } catch (err) {
+        alert("Server error");
+    }
+});
+</script>
